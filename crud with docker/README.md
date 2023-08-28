@@ -1,9 +1,9 @@
-# CRUD
+Загрузка образа Python версии 3.9
 
-Необходимо выполнить и предоставить на проверку задачу:
+docker pull python:3.9
+Создание сборки образа
 
-[Склады и товары](./stocks_products).
+docker build -t bcknd_api .
+Запуск контейнера
 
-Работа должна соответствовать принятому [стилю оформления кода](https://github.com/netology-code/codestyle/tree/master/python).
-
-Любые вопросы по решению задач задавайте в чате учебной группы.
+docker run -d -p 8888:8000 bcknd_api
