@@ -25,6 +25,7 @@ class UpdateUser(BaseModel):
 class CreateAd(BaseModel):
     title: str
     description: str
+    owner: int
     
     @validator("title")
     def title_length(cls, value):

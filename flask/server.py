@@ -95,7 +95,8 @@ class AdsView(MethodView):
     def get(self, ads_id):
         with Session() as session:
             advertisement = get_ad(ads_id, session)
-            return jsonify({"id": advertisement.id, "title":advertisement.title, "description":advertisement.description})
+            return jsonify({"id": advertisement.id, "title":advertisement.title, 
+                            "description":advertisement.description, "owner":advertisement.owner})
         
     def post(self):
         json_data = validate(request.json, CreateAd)

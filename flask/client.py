@@ -1,7 +1,12 @@
 import requests
 
+response = requests.post('http://127.0.0.1:5000/users/',
+                         json={'name':'username','password':'1234567890'})
+print(response.status_code)
+print(response.text)
+
 response = requests.post('http://127.0.0.1:5000/advertisements/',
-                         json={'title':'ad_1','description':'selling stuff'})
+                         json={'title':'ad_1','description':'selling stuff','owner':1})
 print(response.status_code)
 print(response.text)
 

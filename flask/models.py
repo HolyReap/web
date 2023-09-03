@@ -33,5 +33,6 @@ class Advertisement(Base):
     title = Column(String, nullable=False)
     description = Column(String, nullable=False)
     creation_time = Column(DateTime, server_default=func.now())
+    owner = Column(ForeignKey("app_users.id", ondelete="CASCADE"))
     
 Base.metadata.create_all()
